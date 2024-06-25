@@ -1,0 +1,22 @@
+<!-- templates/fruit_prices/fruit_prices_list.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fruit Prices</title>
+</head>
+<body>
+    <h1>Fruit Prices</h1>
+    <ul>
+        {% for fruit in fruits %}
+        <li>{{ fruit.name }}</li>
+            <ul>
+                {% for price in fruit.price_set.all %}
+                <li>{{ price.price }} - {{ price.recorded_at }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+    </ul>
+</body>
+</html>
